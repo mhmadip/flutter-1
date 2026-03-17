@@ -188,6 +188,37 @@ class AnimatedSwitcher extends StatefulWidget {
   ///
   /// The default is [AnimatedSwitcher.defaultTransitionBuilder].
   ///
+  /// The following example uses a [SlideTransition] instead of the default
+  /// [FadeTransition]:
+  ///
+  /// ```dart
+  /// AnimatedSwitcher(
+  ///   duration: const Duration(milliseconds: 400),
+  ///   transitionBuilder: (Widget child, Animation<double> animation) {
+  ///     return SlideTransition(
+  ///       position: Tween<Offset>(
+  ///         begin: const Offset(1.0, 0.0),
+  ///         end: Offset.zero,
+  ///       ).animate(animation),
+  ///       child: child,
+  ///     );
+  ///   },
+  ///   child: Text('$_count', key: ValueKey<int>(_count)),
+  /// )
+  /// ```
+  ///
+  /// The animation provided to the builder has the [duration] and
+```
+
+---
+
+### How to make the edit in VS Code:
+
+1. Press `Ctrl+H` to open **Find & Replace**
+2. Paste in the **Find** box:
+```
+/// The default is [AnimatedSwitcher.defaultTransitionBuilder].
+  ///
   /// The animation provided to the builder has the [duration] and
   /// [switchInCurve] or [switchOutCurve] applied as provided when the
   /// corresponding [child] was first provided.
